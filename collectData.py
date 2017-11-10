@@ -15,7 +15,7 @@ auth.set_access_token(access_token, access_secret)
 api = tweepy.API(auth)
 
 # print("hello world")
-print(consumer_secret)
-#for status in tweepy.Cursor(api.home_timeline).items(1):
+#print(consumer_secret)
+for status in tweepy.Cursor(api.home_timeline).items(20):
     # Process a single status
-    #print(status.text)
+    print("New tweet:\n\n" + status.text + "\n\n")
