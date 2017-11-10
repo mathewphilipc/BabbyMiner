@@ -16,6 +16,10 @@ api = tweepy.API(auth)
 
 # print("hello world")
 #print(consumer_secret)
-for status in tweepy.Cursor(api.home_timeline).items(20):
+for status in tweepy.Cursor(api.home_timeline).items(3):
     # Process a single status
     print("New tweet:\n\n" + status.text + "\n\n")
+
+for status in tweepy.Cursor(api.home_timeline).items(10):
+	# Process a single status
+	process_or_store(status._json)
